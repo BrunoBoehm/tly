@@ -15,6 +15,3 @@
 
 # Ignore Byebug command history file.
 .byebug_history
-
-# Ignore bower components
-vendor/assets/bower_components/
