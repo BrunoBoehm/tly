@@ -5,6 +5,8 @@
     $scope.name = "TripLyst"
   }
 
+  WelcomeController.$inject = ['$scope'];
+
   angular
     .module('triplyst', ['ui.router'])
     .controller('WelcomeController', WelcomeController)
