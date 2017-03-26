@@ -5,7 +5,7 @@
   function CitiesController(CityFactory) {
     var vm = this;
 
-    vm.test = "Honolulu";
+    vm.test = "This is the list of all the cities we currently cover. Keep posted there are more to come ;)";
 
     // Activation: runs at the creation of the controller instance
     activate();
