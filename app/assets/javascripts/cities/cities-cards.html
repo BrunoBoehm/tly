@@ -1,3 +1,10 @@
+<div class="ui icon fluid input">
+  <input ng-model="vm.search" placeholder="Search" />
+  <i class="circular search link icon"></i>
+</div>
+
+<br>
+
 <div class="ui three column grid">
 
   <div class="column" ng-repeat="city in vm.cities | filter: vm.search track by city.id ">
