@@ -7,8 +7,13 @@
       $stateProvider
         .state('home', {
           url: '/',
-          templateUrl: 'home/home.html',
+          templateUrl: 'home/index.html',
           controller: 'HomeController as vm'
+        })
+        .state('cities', {
+          url: '/cities',
+          templateUrl: 'cities/index.html',
+          controller: 'CitiesController as vm'
         })
 
       $urlRouterProvider.otherwise('/')
