@@ -18,8 +18,11 @@
                   .catch(handleError);
     }
 
-    function getCity(){
-
+    // gets called with an id parameter from the controller
+    function getCity(id){
+      return $http.get('/cities/' + id)
+                  .then(handleResponse)
+                  .catch(handleError);
     }
 
     function createCity(){

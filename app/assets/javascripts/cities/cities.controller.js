@@ -23,8 +23,8 @@
 
     // Callbacks
 
-    function setTweets(response){
-      vm.cities = response;
+    function setTweets(data){
+      vm.cities = data;
     }
 
   }
