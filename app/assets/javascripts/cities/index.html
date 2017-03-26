@@ -9,28 +9,6 @@
   </div>
 
   <br>
-  
-  <div class="ui three column grid">
-
-    <div class="column" ng-repeat="city in vm.cities | filter: vm.search track by city.id ">
-      <div class="ui fluid link card">
-        <div class="content">
-          <i class="right floated like icon"></i>
-          <i class="right floated star icon"></i>
-          <div class="header">{{city.name}}</div>
-          <div class="meta">City</div>
-          <div class="description">
-            <p>{{city.description}}</p>
-          </div>
-        </div>
-        <div class="extra content">
-          <div class="right floated author">
-            By Sam <img class="ui avatar image" src="https://yt3.ggpht.com/-rl1kHCEfoGY/AAAAAAAAAAI/AAAAAAAAAAA/lbt6ZjsRFEA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg">
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+  <cities-cards></cities-cards>
 
 </div>
