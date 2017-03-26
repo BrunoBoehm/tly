@@ -1,8 +1,36 @@
 <div class="ui main text container">
+
   <h1>Browse Cities</h1>
   <p>{{vm.test}}</p>
-  <input ng-model="vm.search" placeholder="Search" />
-  <ul>
-    <li ng-repeat="city in vm.cities | filter: vm.search track by city.id ">{{city.name}}</li>
-  </ul>
+
+  <div class="ui icon fluid input">
+    <input ng-model="vm.search" placeholder="Search" />
+    <i class="circular search link icon"></i>
+  </div>
+
+  <br>
+  
+  <div class="ui three column grid">
+
+    <div class="column" ng-repeat="city in vm.cities | filter: vm.search track by city.id ">
+      <div class="ui fluid link card">
+        <div class="content">
+          <i class="right floated like icon"></i>
+          <i class="right floated star icon"></i>
+          <div class="header">{{city.name}}</div>
+          <div class="meta">City</div>
+          <div class="description">
+            <p>{{city.description}}</p>
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="right floated author">
+            By Sam <img class="ui avatar image" src="https://yt3.ggpht.com/-rl1kHCEfoGY/AAAAAAAAAAI/AAAAAAAAAAA/lbt6ZjsRFEA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>
