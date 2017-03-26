@@ -9,7 +9,7 @@
     bindings: {
       name: '=',
       description: '=',
-      place_id: '='
+      id: '='
     }
   }
 

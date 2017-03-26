@@ -21,7 +21,7 @@
           controller: 'CityController as vm'
         })
         .state('city.place', {
-          url: '/cities/:city_id/place/:id',
+          url: '/places/:place_id',
           templateUrl: 'places/show.html',
           controller: 'PlacesController as vm'
         })

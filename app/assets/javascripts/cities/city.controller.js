@@ -13,7 +13,7 @@
 
     function activate(){
       console.log("inside city controller activate");
-      console.log($stateParams)
+      console.log($stateParams);
       getCity($stateParams.id);
     }
 

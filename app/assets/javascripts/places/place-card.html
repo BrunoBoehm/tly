@@ -1,4 +1,4 @@
-<div class="ui fluid link card" ui-sref="city.place({city_id: vm.id, id: vm.places_id})">
+<div class="ui fluid link card" ui-sref="city.place({place_id: vm.id})">
   <div class="content">
     <i class="right floated like icon"></i>
     <i class="right floated star icon"></i>
@@ -6,6 +6,7 @@
     <div class="meta">City</div>
     <div class="description">
       <p>{{vm.description}}</p>
+      <a href="#" ui-sref="city.place({place_id: vm.id})">Place id: {{vm.id}}</a>
     </div>
   </div>
   <div class="extra content">

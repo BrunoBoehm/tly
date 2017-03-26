@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function PlacesController(PlaceFactory, $stateParams) {
+  function PlacesController(PlaceFactory, $stateParams, id) {
     var vm = this;
 
     vm.test = "We're on the Place page";
@@ -12,7 +12,7 @@
     function activate() {
       console.log("We're inside the places controller activate method");
       console.log($stateParams);
-      getCityPlace($stateParams.city_id, $stateParams.id);
+      getCityPlace(id, $stateParams.id);
     }
 
     // Functions

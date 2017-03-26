@@ -5,13 +5,13 @@
 
   <h2>Cool places in {{vm.city.name}}</h2>
   <ul>
-    <li ng-repeat="place in vm.city.places track by place.id">{{place.name}}</li>
+    <li ng-repeat="place in vm.city.places track by place.id">{{place.name}}, place_id: {{place.id}} </li>
   </ul>
 
   <h2>Another time using component</h2>
   <div class="ui three column grid">
     <div class="column" ng-repeat="place in vm.city.places track by place.id">
-      <place-card name="place.name" description="place.description" place_id="place.id" />
+      <place-card name="place.name" description="place.description" id="place.id" />
     </div>
   </div>
 
