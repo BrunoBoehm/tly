@@ -8,7 +8,8 @@
     restrict: 'E',
     bindings: {
       name: '=',
-      description: '='
+      description: '=',
+      place_id: '='
     }
   }
 

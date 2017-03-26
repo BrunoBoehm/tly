@@ -11,7 +11,7 @@
   <h2>Another time using component</h2>
   <div class="ui three column grid">
     <div class="column" ng-repeat="place in vm.city.places track by place.id">
-      <place-card name="place.name" description="place.description" />
+      <place-card name="place.name" description="place.description" place_id="place.id" />
     </div>
   </div>
 
