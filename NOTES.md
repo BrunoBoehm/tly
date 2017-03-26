@@ -8,7 +8,9 @@
       routes.js     # mounts on the main module the .config with all routes
       /home
         home.controller.js
+        home.html
       /cities
         cities.controller.js
+        cities.html
 
 ```

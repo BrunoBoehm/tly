@@ -7,7 +7,8 @@ end
 
 gem 'active_model_serializers'
 
-# gem 'angular-rails-templates'
+# to be able to place html files in the asset path
+gem 'angular-rails-templates'
 # gem 'responders'
 
 gem 'devise'
