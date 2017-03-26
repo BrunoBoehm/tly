@@ -8,7 +8,7 @@
 <div class="ui three column grid">
 
   <div class="column" ng-repeat="city in vm.cities | filter: vm.search track by city.id ">
-    <div class="ui fluid link card">
+    <div class="ui fluid link card" ui-sref="city({id: city.id})">
       <div class="content">
         <i class="right floated like icon"></i>
         <i class="right floated star icon"></i>
