@@ -1,5 +1,8 @@
-
 <div class="ui main text container">
-  <h1>{{city}}</h1>
+  <h1>Browse Cities</h1>
+  <h2>{{vm.test}}</h2>
+  <ul>
+    <li ng-repeat="city in vm.cities track by city.id">{{city.name}}</li>
+  </ul>
   <p>Text for cities</p>
 </div>
