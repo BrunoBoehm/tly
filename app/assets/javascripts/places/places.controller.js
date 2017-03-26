@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function PlacesController(PlaceFactory, $stateParams, id) {
+  function PlacesController(PlaceFactory, $stateParams) {
     var vm = this;
 
     vm.test = "We're on the Place page";
@@ -12,7 +12,7 @@
     function activate() {
       console.log("We're inside the places controller activate method");
       console.log($stateParams);
-      getCityPlace(id, $stateParams.id);
+      getCityPlace($stateParams.id, $stateParams.place_id);
     }
 
     // Functions
@@ -30,7 +30,7 @@
 
   }
 
-  PlacesController.$inject = ['PlaceFactory'];
+  PlacesController.$inject = ['PlaceFactory', '$stateParams'];
 
   angular
     .module('triplyst')

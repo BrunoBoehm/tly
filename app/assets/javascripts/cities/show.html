@@ -3,6 +3,8 @@
   <h1>{{vm.city.name}}</h1>
   <p>{{vm.city.description}}</p>
 
+  <ui-view></ui-view>
+
   <h2>Cool places in {{vm.city.name}}</h2>
   <ul>
     <li ng-repeat="place in vm.city.places track by place.id">{{place.name}}, place_id: {{place.id}} </li>
