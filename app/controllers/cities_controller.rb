@@ -12,6 +12,7 @@ class CitiesController < ApplicationController
 
   def create
     city = City.new(city_params)
+    binding.pry
     if city.save
       render json: city, status: 201
     else

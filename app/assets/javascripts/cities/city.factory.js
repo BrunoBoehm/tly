@@ -25,8 +25,20 @@
                   .catch(handleError);
     }
 
-    function createCity(){
+    function createCity(newCity){
+      var request = {
+        method: "POST",
+        url: "/cities",
+        data: {
+          city: newCity
+        },
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
 
+      return $http(request)
+                    .catch(handleError);
     }
 
     function updateCity(){
@@ -43,7 +55,7 @@
       return response.data
     }
 
-    function handleError(){
+    function handleError(error){
       console.log(error)
     }
 

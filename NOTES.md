@@ -51,3 +51,4 @@ Improvements to make
 - Putting a filter to order search results
 - Another layout for the HP (not based on the same ng-view ?)  
 - Search with /cities/:name slug
+- Hide the card in the list if the url is the card's url
