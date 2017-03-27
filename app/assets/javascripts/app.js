@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('triplyst', ['ui.router', 'templates']);
+    .module('triplyst', ['ui.router', 'ngMessages', 'templates']);
 
 }());

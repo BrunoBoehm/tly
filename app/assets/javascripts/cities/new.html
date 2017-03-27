@@ -1,11 +1,25 @@
 <form class="ui form" ng-submit="vm.createCity()">
   <div class="field">
     <label>City Name</label>
-    <input type="text" placeholder="City Name" ng-model="vm.newCity.name">
+    <input  type="text"
+            placeholder="City Name"
+            ng-model="vm.newCity.name"
+            name="name"
+            required="required"
+            minlength="2">
   </div>
+  <div ng-messages="form.name.$error" ng-if="form.name.$touched">
+  		<div ng-message="required">City name is required!</div>
+      <div ng-message="minlength">This name is too short for a city!</div>
+  </div>
+
   <div class="field">
     <label>Description</label>
-    <textarea placeholder="City Description" ng-model="vm.newCity.description"></textarea>
+    <textarea placeholder="City Description" ng-model="vm.newCity.description" name="description" required="required"></textarea>
   </div>
+  <div ng-messages="form.description.$error" ng-if="form.description.$touched">
+  		<div ng-message="required">Description is required!</div>
+  </div>
+
   <button class="ui button" type="submit">Create City</button>
 </form>
