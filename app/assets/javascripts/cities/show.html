@@ -1,7 +1,20 @@
 <div class="ui main text container">
 
+  <div class="ui right floated main menu">
+    <a class="bug popup icon item" data-content="Edit This Page" ng-click="showEdit=true">
+      <i class="edit icon"></i>
+      Edit
+    </a>
+
+    <a class="bug popup icon item" data-content="Add A Place" >
+      <i class="add circle icon"></i>
+      Add Place
+    </a>
+  </div>
+
   <h1>{{vm.city.name}}</h1>
   <p>{{vm.city.description}}</p>
+
 
   <ui-view></ui-view>
 
@@ -18,10 +31,6 @@
   </div>
 
   <br>
-  <div class="ui horizontal divider">
-    Edit this City
-  </div>
-
-  <edit-city></edit-city>
+  <edit-city ng-show="showEdit"></edit-city>
 
 </div>
