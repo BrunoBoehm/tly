@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function CitiesController(CityFactory, $state, $stateParams) {
+  function CitiesController(CityFactory, $stateParams, $state) {
     var vm = this;
 
     vm.test = "This is the list of all the cities we currently cover. Keep posted there are more to come ;)";
@@ -19,7 +19,7 @@
 
     function getCities(){
       return CityFactory.getCities()
-                        .then(setTweets);
+                        .then(setCities);
     }
 
     function createCity(){
@@ -31,17 +31,21 @@
 
     // Callbacks
 
-    function setTweets(data){
+    function setCities(data){
+      console.log("setting cities");
       vm.cities = data;
     }
 
     function redirectToCities(){
-      $state.go('cities');
+      // console.log('started redirect to cities');
+      // $state.go('cities');
+      console.log('reloads cities');
+      getCities();
     }
 
   }
 
-  CitiesController.$inject = ['CityFactory', '$state', '$stateParams'];
+  CitiesController.$inject = ['CityFactory', '$stateParams', '$state'];
 
   angular
    .module('triplyst')
