@@ -5,7 +5,7 @@
   var newCity = {
     templateUrl: "cities/new.html",
     restrict: "E",
-    controller: "CitiesController as vm",
+    controller: "CitiesController as vm"
   }
 
 

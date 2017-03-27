@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function CitiesController(CityFactory, $state) {
+  function CitiesController(CityFactory, $state, $stateParams) {
     var vm = this;
 
     vm.test = "This is the list of all the cities we currently cover. Keep posted there are more to come ;)";
@@ -28,6 +28,7 @@
                         .then(redirectToCities);
     }
 
+
     // Callbacks
 
     function setTweets(data){
@@ -40,7 +41,7 @@
 
   }
 
-  CitiesController.$inject = ['CityFactory', '$state'];
+  CitiesController.$inject = ['CityFactory', '$state', '$stateParams'];
 
   angular
    .module('triplyst')

@@ -1,0 +1,16 @@
+<div class="ui segment" ng-if="vm.city.name">
+  <h1>{{vm.city.name}}</h1>
+  <p>{{vm.city.description}}</p>
+</div>
+
+<form class="ui form" ng-submit="vm.updateCity()">
+  <div class="field">
+    <label>City Name</label>
+    <input type="text" ng-model="vm.city.name">
+  </div>
+  <div class="field">
+    <label>Description</label>
+    <textarea ng-model="vm.city.description"></textarea>
+  </div>
+  <button class="ui button" type="submit">Update City</button>
+</form>

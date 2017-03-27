@@ -41,8 +41,23 @@
                     .catch(handleError);
     }
 
-    function updateCity(){
+    function updateCity(id, updatedCity){
+      var url = "/cities/" + id;
 
+      var request = {
+        method: "PUT",
+        url: url,
+        data: {
+          city: updatedCity
+        },
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+
+      return $http(request)
+                  .then(handleResponse)
+                  .catch(handleError);
     }
 
     function deleteCity(){

@@ -2,12 +2,13 @@
 
   'use strict';
 
-  function CityController(CityFactory, $stateParams){
+  function CityController(CityFactory, $stateParams, $state){
     var vm = this;
 
     console.log("Inside CityController")
 
     vm.test = "It's always a pleasure to introduce a city to you";
+    vm.updateCity = updateCity;
 
     activate();
 
@@ -24,15 +25,26 @@
                   .then(setCity);
     }
 
+    function updateCity(){
+      console.log(vm.city);
+      console.log($stateParams);
+      return CityFactory.updateCity($stateParams.id, vm.city)
+                        .then(redirectToCities);
+    }
+
     // Callbacks
 
     function setCity(data){
       vm.city = data;
     }
 
+    function redirectToCities(){
+      $state.go('cities');
+    }
+
   }
 
-  CityController.$inject = ['CityFactory', '$stateParams'];
+  CityController.$inject = ['CityFactory', '$stateParams', '$state'];
 
   angular
     .module('triplyst')
