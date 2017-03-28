@@ -9,6 +9,7 @@
 
     vm.test = "It's always a pleasure to introduce a city to you";
     vm.updateCity = updateCity;
+    vm.deleteCity = deleteCity;
 
     activate();
 
@@ -29,6 +30,11 @@
       console.log(vm.city);
       console.log($stateParams);
       return CityFactory.updateCity($stateParams.id, vm.city)
+                        .then(redirectToCities);
+    }
+
+    function deleteCity(){
+      return CityFactory.deleteCity($stateParams.id)
                         .then(redirectToCities);
     }
 

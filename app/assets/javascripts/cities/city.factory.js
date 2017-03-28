@@ -60,8 +60,20 @@
                   .catch(handleError);
     }
 
-    function deleteCity(){
+    function deleteCity(id){
+      var url = "/cities/" + id;
 
+      var request = {
+        method: "DELETE",
+        url: url,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+
+      return $http(request)
+                  .then(handleResponse)
+                  .catch(handleError);
     }
 
     // Callbacks
