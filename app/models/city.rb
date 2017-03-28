@@ -1,4 +1,5 @@
 class City < ApplicationRecord
-  validates_presence_of :name
+  validates :name, presence: true
+  validates :name, uniqueness: true
   has_many :places
 end
