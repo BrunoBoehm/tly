@@ -1,9 +1,10 @@
+<!-- in the scope of CitiesController as vm  -->
 <div class="ui main text container">
 
   <h1>Browse {{vm.cities.length}} Cities</h1>
   <p>{{vm.test}}</p>
 
-  <cities-cards></cities-cards>
+  <cities-cards cities="vm.cities"></cities-cards>
 
   <br>
   <div class="ui horizontal divider">

@@ -66,6 +66,7 @@
 
     // Callbacks
     function handleResponse(response){
+      console.log("City Factory handling response:")
       console.log(response)
       return response.data
     }

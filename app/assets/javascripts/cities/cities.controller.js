@@ -15,6 +15,7 @@
       getCities();
     }
 
+
     // Protected methods
 
     function getCities(){
@@ -25,7 +26,7 @@
     function createCity(){
       console.log(vm.newCity);
       return CityFactory.createCity(vm.newCity)
-                        .then(redirectToCities);
+                        .then(getCities);
     }
 
 
@@ -34,13 +35,6 @@
     function setCities(data){
       console.log("setting cities");
       vm.cities = data;
-    }
-
-    function redirectToCities(){
-      // console.log('started redirect to cities');
-      // $state.go('cities');
-      console.log('reloads cities');
-      getCities();
     }
 
   }

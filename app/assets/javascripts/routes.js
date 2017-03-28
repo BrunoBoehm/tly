@@ -28,7 +28,7 @@
 
         // utiliser resolve sans localhost en début d'url ?
         // faire une nested view pour /cities/1/places
-        // trouver un moyen avec throught de faire une nested view /cities/1/tracks au travers de places ? City Model class method ?
+        // trouver un moyen avec through de faire une nested view /cities/1/tracks au travers de places ? City Model class method ?
 
       $urlRouterProvider.otherwise('/')
     })
