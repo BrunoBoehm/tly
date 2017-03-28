@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :cities, except: [:edit, :new] do
     resources :places, except: [:edit, :new]
   end
+
+  resources :places, except: [:edit, :new]
 end

@@ -6,12 +6,11 @@
     var vm = this;
 
     vm.test = "We're on the Place page";
+    // vm.createPlace = createPlace;
 
     activate();
 
     function activate() {
-      console.log("We're inside the places controller activate method");
-      console.log($stateParams);
       getCityPlace($stateParams.id, $stateParams.place_id);
     }
 
@@ -21,6 +20,11 @@
       PlaceFactory.getCityPlace(city_id, id)
                   .then(setCityPlace);
     }
+
+    // function createPlace(){
+    //   return PlaceFactory.createPlace(vm.newPlace)
+    //                       .then(getCity($stateParams.id));
+    // }
 
     // Callbacks
 

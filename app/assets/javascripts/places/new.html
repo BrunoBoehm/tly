@@ -1,0 +1,31 @@
+<div class="ui horizontal divider">
+  Add a cool place in {{vm.city.name}}
+</div>
+
+{{vm.test}}
+
+<form class="ui form" ng-submit="vm.createPlace()">
+  <div class="field">
+    <label>Place Name</label>
+    <input  type="text"
+            placeholder="Place Name"
+            ng-model="vm.newPlace.name"
+            name="name"
+            required="required"
+            minlength="2">
+  </div>
+  <div ng-messages="form.name.$error" ng-if="form.name.$touched">
+  		<div ng-message="required">Place name is required!</div>
+      <div ng-message="minlength">This name is too short for a city!</div>
+  </div>
+
+  <div class="field">
+    <label>Description</label>
+    <textarea placeholder="Place Description" ng-model="vm.newPlace.description" name="description" required="required"></textarea>
+  </div>
+  <div ng-messages="form.description.$error" ng-if="form.description.$touched">
+  		<div ng-message="required">Description is required!</div>
+  </div>
+
+  <button class="ui button" type="submit">Create Place</button>
+</form>

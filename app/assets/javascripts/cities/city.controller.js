@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function CityController(CityFactory, $stateParams, $state){
+  function CityController(CityFactory, PlaceFactory, $stateParams, $state){
     var vm = this;
 
     console.log("Inside CityController")
@@ -10,6 +10,7 @@
     vm.test = "It's always a pleasure to introduce a city to you";
     vm.updateCity = updateCity;
     vm.deleteCity = deleteCity;
+    vm.createPlace = createPlace;
 
     activate();
 
@@ -22,6 +23,7 @@
     // Protected functions
 
     function getCity(id){
+      console.log("get city" + id)
       CityFactory.getCity(id)
                   .then(setCity);
     }
@@ -38,6 +40,15 @@
                         .then(redirectToCities);
     }
 
+    // nested creation for a place from a city
+    function createPlace(){
+      console.log(vm.newPlace);
+      var id = $stateParams.id;
+      vm.newPlace.city_id = id;
+      return PlaceFactory.createPlace(vm.newPlace)
+                          .then(getCity(id));
+    }
+
     // Callbacks
 
     function setCity(data){
@@ -50,7 +61,7 @@
 
   }
 
-  CityController.$inject = ['CityFactory', '$stateParams', '$state'];
+  CityController.$inject = ['CityFactory', 'PlaceFactory', '$stateParams', '$state'];
 
   angular
     .module('triplyst')

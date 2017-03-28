@@ -6,7 +6,7 @@
       Edit
     </a>
 
-    <a class="bug popup icon item" data-content="Add A Place" >
+    <a class="bug popup icon item" data-content="Add A Place" ng-click="showAddPlace = !showAddPlace">
       <i class="add circle icon"></i>
       Add Place
     </a>
@@ -19,11 +19,6 @@
   <ui-view></ui-view>
 
   <h2>Cool places in {{vm.city.name}}</h2>
-  <ul>
-    <li ng-repeat="place in vm.city.places track by place.id">{{place.name}}, place_id: {{place.id}} </li>
-  </ul>
-
-  <h2>Another time using component</h2>
   <div class="ui three column grid">
     <div class="column" ng-repeat="place in vm.city.places track by place.id">
       <place-card name="place.name" description="place.description" id="place.id" />
@@ -32,5 +27,6 @@
 
   <br>
   <edit-city ng-show="showEdit"></edit-city>
+  <div ng-include="'places/new.html'" ng-show="showAddPlace"><div>
 
 </div>

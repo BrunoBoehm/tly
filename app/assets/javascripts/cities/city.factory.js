@@ -25,6 +25,7 @@
                   .catch(handleError);
     }
 
+    // gets called with ng-submit
     function createCity(newCity){
       var request = {
         method: "POST",
@@ -41,6 +42,7 @@
                     .catch(handleError);
     }
 
+    // gets called with ng submit with the id from stateParams
     function updateCity(id, updatedCity){
       var url = "/cities/" + id;
 
@@ -60,6 +62,7 @@
                   .catch(handleError);
     }
 
+    // gets called with ng-click with the id from stateParams
     function deleteCity(id){
       var url = "/cities/" + id;
 

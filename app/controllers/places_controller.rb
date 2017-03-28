@@ -12,6 +12,8 @@ class PlacesController < ApplicationController
 
   def create
     place = Place.new(place_params)
+    # check the params sent by angular
+    # binding.pry
     if place.save
       render json: place, status: 201
     else
