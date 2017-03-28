@@ -19,6 +19,7 @@
     // Protected methods
 
     function getCities(){
+      vm.newCity = {};
       return CityFactory.getCities()
                         .then(setCities);
     }
