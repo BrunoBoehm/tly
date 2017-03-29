@@ -31,6 +31,7 @@
       };
 
       return $http(request)
+                    .then(handleResponse)
                     .catch(handleError);
     }
 

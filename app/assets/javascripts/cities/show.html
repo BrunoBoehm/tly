@@ -15,7 +15,6 @@
   <h1><a href="#" ui-sref="city({id: vm.city.id})">{{vm.city.name}}</a></h1>
   <p>{{vm.city.description}}</p>
 
-
   <ui-view></ui-view>
 
   <h2>Cool places in {{vm.city.name}}</h2>
@@ -25,8 +24,7 @@
     </div>
   </div>
 
-  <br>
-  <edit-city ng-show="showEdit"></edit-city>
-  <div ng-include="'places/new.html'" ng-show="showAddPlace"><div>
+  <edit-city ng-if="showEdit"></edit-city>
+  <div ng-include="'places/new.html'" ng-if="showAddPlace"><div>
 
 </div>
