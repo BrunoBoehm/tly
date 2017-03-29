@@ -6,18 +6,27 @@
 
     return {
       getCityPlace: getCityPlace,
+      getPlaces: getPlaces,
       createPlace: createPlace,
       updatePlace: updatePlace,
       deletePlace: deletePlace
     }
 
     // callable functions on the service object
-
     function getCityPlace(city_id, id){
       return $http.get('/cities/' + city_id + '/places/' + id)
                   .then(handleResponse)
                   .catch(handleError);
     }
+
+
+    // sets the places
+    function getPlaces() {
+      return $http.get('/places')
+                  .then(handleResponse)
+                  .catch(handleError);
+    }
+
 
     // sends a post request containing city_id if applicable
     function createPlace(newPlace){
