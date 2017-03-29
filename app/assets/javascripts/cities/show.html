@@ -12,31 +12,34 @@
 
 <div class="ui text container">
 
-  <!-- Introduces the city and gives options to admin -->
-  <div class="ui main menu">
-    <a class="bug popup icon item" data-content="Edit This Page" ui-sref="city">
-      <i class="remove icon"></i>
+  <!-- Main City Menu (more options for admin) -->
+  <div class="ui secondary pointing menu">
+    <a class="item" ui-sref="city" ui-sref-active="active">
+      <i class="flag icon"> </i>
+      City
     </a>
-    <a class="bug popup icon item" data-content="Edit This Page" ui-sref="city.edit">
-      <i class="write icon"></i>
-      &nbsp;Edit City
-    </a>
-    <a class="bug popup icon item" data-content="Add A Place" ui-sref="city.newPlace">
-      <i class="pin icon"></i>
-      &nbsp;Add Place
-    </a>
-    <a class="bug popup icon item" data-content="Add A Track">
-      <i class="bookmark icon"></i>
-      &nbsp;Add Track
-    </a>
-    <a class="bug popup icon item" data-content="See Tags">
+    <a class="item" ui-sref-active="active">
       <i class="tags icon"></i>
-      &nbsp;See Tags
+      See Tags
     </a>
-    <a class="bug popup icon item" data-content="See Tags">
+    <a class="item" ui-sref-active="active">
       <i class="map icon"></i>
-      &nbsp;See Tracks
+      See Tracks
     </a>
+    <div class="right menu">
+      <a class="ui item" ui-sref="city.edit">
+        <i class="write icon"></i>
+        Edit City
+      </a>
+      <a class="ui item">
+        <i class="bookmark icon"></i>
+        Add Track
+      </a>
+      <a class="ui item" ui-sref="city.newPlace">
+        <i class="pin icon"></i>
+        Add Place
+      </a>
+    </div>
   </div>
 
   <!-- city editor for admin -->
