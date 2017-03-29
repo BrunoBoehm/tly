@@ -23,6 +23,11 @@
         templateUrl: 'places/show.html',
         controller: 'PlacesController as vm'
       })
+      .state('city.edit', {
+        url: '/edit',
+        templateUrl: 'cities/edit.html',
+        controller: 'CityController as vm'
+      })
       .state('city.newPlace', {
         url: '/new-place',
         templateUrl: 'places/new.html',

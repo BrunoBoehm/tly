@@ -14,7 +14,7 @@
 
   <!-- Introduces the city and gives options to admin -->
   <div class="ui main menu">
-    <a class="bug popup icon item" data-content="Edit This Page" ng-click="showEdit = !showEdit">
+    <a class="bug popup icon item" data-content="Edit This Page" ui-sref="city.edit">
       <i class="edit icon"></i>
       &nbsp;Edit City
     </a>
@@ -24,12 +24,11 @@
     </a>
   </div>
 
-  <div class="ui hidden divider"></div>
-
   <!-- city editor for admin -->
-  <edit-city ng-if="showEdit"></edit-city>
+  <!-- To be use with <a class="bug popup icon item" data-content="Edit This Page" ng-click="showEdit = !showEdit"> -->
+  <!-- <edit-city ng-if="showEdit"></edit-city> -->
 
-  <div class="ui hidden divider"></div>
+  <!-- <div class="ui hidden divider"></div> -->
 
   <!-- nested routes view -->
   <ui-view></ui-view>
