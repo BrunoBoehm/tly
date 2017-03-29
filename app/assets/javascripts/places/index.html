@@ -6,7 +6,9 @@
 
   <div class="ui three column grid">
     <div class="column" ng-repeat="place in vm.places | orderBy: 'name' track by place.id">
-      <place-card name="place.name" description="place.description" id="place.id" />
+      <!-- to check out the iterated place object <p>{{place}}</p> -->
+      <place-card name="place.name" description="place.description" cityid="place.city_id" placeid="place.id" city="place.city.name"></place-card>
+      <!-- very important to use bindings that have no case or - _  -->
     </div>
   </div>
 

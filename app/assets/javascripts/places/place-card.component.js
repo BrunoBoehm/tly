@@ -4,12 +4,15 @@
 
   var placeCard = {
     templateUrl: "places/place-card.html",
-    controllerAs: "vm",
+    controller: "PlacesController as vm",
     restrict: 'E',
     bindings: {
       name: '=',
       description: '=',
-      id: '='
+      cityid: '=',
+      placeid: '=',
+      city: '='
+      // very important not to use case or - _ in bindings
     }
   }
 
