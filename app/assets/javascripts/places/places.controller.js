@@ -28,6 +28,7 @@
     // }
 
     function updatePlace() {
+      vm.showEditPlace = !vm.showEditPlace;
       PlaceFactory.updatePlace($stateParams.place_id, vm.cityPlace)
                   .then(activate);
     }

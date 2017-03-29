@@ -2,11 +2,11 @@
   <h1>{{vm.cityPlace.name}}</h1>
   <p>{{vm.cityPlace.description}}</p>
 
-  <button class="ui basic button" ng-click="showEditPlace = !showEditPlace">
+  <button class="ui basic button" ng-click="vm.showEditPlace = !vm.showEditPlace">
     <i class="edit icon"></i>
     Edit Place
   </button>
 </div>
 
 <!-- <edit-place ng-if="showEditPlace"></edit-place> -->
-<div ng-include="'places/edit.html'" ng-if="showEditPlace"></div>
+<div ng-include="'places/edit.html'" ng-if="vm.showEditPlace"></div>
