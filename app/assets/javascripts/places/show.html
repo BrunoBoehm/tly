@@ -1,13 +1,11 @@
 <div class="ui segment">
-  <div class="ui right floated main menu">
-    <a class="bug popup icon item" data-content="Edit This Place" ng-click="showEditPlace = !showEditPlace">
-      <i class="edit icon"></i>
-      Edit
-    </a>
-  </div>
-
   <h1>{{vm.cityPlace.name}}</h1>
   <p>{{vm.cityPlace.description}}</p>
+
+  <button class="ui basic button" ng-click="showEditPlace = !showEditPlace">
+    <i class="edit icon"></i>
+    Edit Place
+  </button>
 </div>
 
 <!-- <edit-place ng-if="showEditPlace"></edit-place> -->
