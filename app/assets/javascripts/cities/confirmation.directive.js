@@ -2,15 +2,16 @@
 
   'use strict';
 
+  // the trick was to create a confirmed-click attributes instead of using ng-clicks (that clicks even if "cancel")
   function confirmClick(){
     return {
       restrict: 'A',
-      link: function (scope, element, attr) {
-        var msg = attr.confirmClick || "Are you sure?";
-        var clickAction = attr.ngClick;
+      link: function (scope, element, attrs) {
+        var message = attrs.confirmClick || "Are you sure?";
+        debugger;
         element.bind('click',function (event) {
-          if ( window.confirm(msg) ) {
-              scope.$eval(clickAction)
+          if ( message && confirm(message) ) {
+              scope.$apply(attrs.confirmedClick);
           }
         });
       }
