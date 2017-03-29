@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is meant to enable to
+- list cities
+- add places to cities
+- create lists/tracks/selections from cities'places
 
-Things you may want to cover:
+## How to install
+- run 'rails bower:install' to install angular dependencies
+- run 'bundle install' to install gems
+- run 'rake db:migrate'
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### When pushing to heroku
+- Strict DI is enabled to fix dependency injection
+- run 'heroku run rake db:migrate'
