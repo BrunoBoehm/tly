@@ -2,12 +2,13 @@
 
   'use strict';
 
-  function PlacesController(PlaceFactory, $stateParams) {
+  function PlacesController(PlaceFactory, $stateParams, $state) {
     var vm = this;
 
     // vm.test = "We're on the Place page";
     // vm.createPlace = createPlace; belongs in the City controller since for now we create a place from a city
     vm.updatePlace = updatePlace;
+    vm.deletePlace = deletePlace;
 
     activate();
 
@@ -33,15 +34,25 @@
                   .then(activate);
     }
 
+    function deletePlace() {
+      PlaceFactory.deletePlace($stateParams.place_id)
+                  .then(redirectToCity($stateParams.id));
+    }
+
     // Callbacks
 
     function setCityPlace(data) {
       vm.cityPlace = data;
     }
 
+    function redirectToCity(city_id){
+      $state.go('city', {id: city_id});
+    }
+
+
   }
 
-  PlacesController.$inject = ['PlaceFactory', '$stateParams'];
+  PlacesController.$inject = ['PlaceFactory', '$stateParams', '$state'];
 
   angular
     .module('triplyst')
