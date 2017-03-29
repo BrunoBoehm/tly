@@ -63,7 +63,6 @@
       $state.go('city', {id: city_id});
     }
 
-
   }
 
   PlacesController.$inject = ['PlaceFactory', '$stateParams', '$state'];

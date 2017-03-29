@@ -4,4 +4,10 @@
   <h1>Browse {{vm.places.length}} Places</h1>
   <p>{{vm.welcome}}</p>
 
+  <div class="ui three column grid">
+    <div class="column" ng-repeat="place in vm.places | orderBy: 'name' track by place.id">
+      <place-card name="place.name" description="place.description" id="place.id" />
+    </div>
+  </div>
+
 </div>
