@@ -1,0 +1,16 @@
+<div class="ui horizontal divider">
+  Edit this place
+</div>
+
+<form class="ui form" ng-submit="vm.updatePlace()">
+  <div class="field">
+    <label>Place Name</label>
+    <input type="text" ng-model="vm.place.name">
+  </div>
+  <div class="field">
+    <label>Description</label>
+    <textarea ng-model="vm.place.description"></textarea>
+  </div>
+  <button class="ui button" type="submit">Update Place</button>
+</form>
+<button class="ui right floated red button" ng-click="vm.deletePlace()">Delete Place</button>

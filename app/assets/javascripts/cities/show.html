@@ -1,22 +1,40 @@
-<div class="ui main text container">
 
-  <div class="ui right floated main menu">
+<div class="ui inverted vertical masthead center aligned segment">
+
+  <div class="ui text container">
+    <h1 class="ui inverted header">
+      <a href="#" ui-sref="city({id: vm.city.id})">{{vm.city.name}}</a>
+    </h1>
+    <h2>{{vm.city.description}}</h2>
+  </div>
+
+</div> <!-- end of masthead -->
+
+<div class="ui text container">
+
+  <!-- Introduces the city and gives options to admin -->
+  <div class="ui main menu">
     <a class="bug popup icon item" data-content="Edit This Page" ng-click="showEdit = !showEdit">
       <i class="edit icon"></i>
-      Edit
+      &nbsp;Edit City
     </a>
-
     <a class="bug popup icon item" data-content="Add A Place" ng-click="showAddPlace = !showAddPlace">
       <i class="add circle icon"></i>
-      Add Place
+      &nbsp;Add Place
     </a>
   </div>
 
-  <h1><a href="#" ui-sref="city({id: vm.city.id})">{{vm.city.name}}</a></h1>
-  <p>{{vm.city.description}}</p>
+  <div class="ui hidden divider"></div>
 
+  <!-- city editor for admin -->
+  <edit-city ng-if="showEdit"></edit-city>
+
+  <div class="ui hidden divider"></div>
+
+  <!-- nested routes view -->
   <ui-view></ui-view>
 
+  <!-- list of places -->
   <h2>Cool places in {{vm.city.name}}</h2>
   <div class="ui three column grid">
     <div class="column" ng-repeat="place in vm.city.places track by place.id">
@@ -24,7 +42,8 @@
     </div>
   </div>
 
-  <edit-city ng-if="showEdit"></edit-city>
+
+  <!-- form for users to add a place -->
   <div ng-include="'places/new.html'" ng-if="showAddPlace"><div>
 
 </div>
