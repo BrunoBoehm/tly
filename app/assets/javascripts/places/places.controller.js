@@ -5,8 +5,9 @@
   function PlacesController(PlaceFactory, $stateParams) {
     var vm = this;
 
-    vm.test = "We're on the Place page";
-    // vm.createPlace = createPlace;
+    // vm.test = "We're on the Place page";
+    // vm.createPlace = createPlace; belongs in the City controller since for now we create a place from a city
+    vm.updatePlace = updatePlace;
 
     activate();
 
@@ -25,6 +26,11 @@
     //   return PlaceFactory.createPlace(vm.newPlace)
     //                       .then(getCity($stateParams.id));
     // }
+
+    function updatePlace() {
+      PlaceFactory.updatePlace($stateParams.place_id, vm.cityPlace)
+                  .then(activate);
+    }
 
     // Callbacks
 

@@ -12,5 +12,6 @@
 ## Questions
 - Why is add cityPlace posting after the get (it's supposed to be a .then)?
 - Using a partial for the form Vs using a component and 2-way data binding (back to parent scope)
+- When editing a nested city, how can it update the header title and desc?
 - How to make texts also act as input (transforming element to input?)
 - Why can't I move the edit and add sections in cities#show

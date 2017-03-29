@@ -8,7 +8,6 @@
       restrict: 'A',
       link: function (scope, element, attrs) {
         var message = attrs.confirmClick || "Are you sure?";
-        debugger;
         element.bind('click',function (event) {
           if ( message && confirm(message) ) {
               scope.$apply(attrs.confirmedClick);

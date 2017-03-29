@@ -6,7 +6,8 @@
 
     return {
       getCityPlace: getCityPlace,
-      createPlace: createPlace
+      createPlace: createPlace,
+      updatePlace: updatePlace
     }
 
     // callable functions on the service object
@@ -33,6 +34,23 @@
       return $http(request)
                     .then(handleResponse)
                     .catch(handleError);
+    }
+
+    function updatePlace(id, editedPlace) {
+      var request = {
+        method: "PUT",
+        url: "/places/" + id,
+        data: {
+          place: editedPlace
+        },
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+
+      return $http(request)
+                  .then(handleResponse)
+                  .catch(handleError);
     }
 
     // Callback functions

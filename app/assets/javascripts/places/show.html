@@ -6,9 +6,9 @@
     </a>
   </div>
 
-  <p>{{vm.test}}</p>
   <h1>{{vm.cityPlace.name}}</h1>
   <p>{{vm.cityPlace.description}}</p>
 </div>
 
-<edit-place ng-if="showEditPlace"></edit-place>
+<!-- <edit-place ng-if="showEditPlace"></edit-place> -->
+<div ng-include="'places/edit.html'" ng-if="showEditPlace"></div>
