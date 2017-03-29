@@ -23,6 +23,11 @@
         templateUrl: 'places/show.html',
         controller: 'PlacesController as vm'
       })
+      .state('city.newPlace', {
+        url: '/new-place',
+        templateUrl: 'places/new.html',
+        controller: 'CityController as vm'
+      })
 
       // utiliser resolve sans localhost en début d'url ?
       // faire une nested view pour /cities/1/places

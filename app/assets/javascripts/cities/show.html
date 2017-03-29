@@ -18,7 +18,7 @@
       <i class="edit icon"></i>
       &nbsp;Edit City
     </a>
-    <a class="bug popup icon item" data-content="Add A Place" ng-click="showAddPlace = !showAddPlace">
+    <a class="bug popup icon item" data-content="Add A Place" ui-sref="city.newPlace">
       <i class="add circle icon"></i>
       &nbsp;Add Place
     </a>
@@ -37,13 +37,13 @@
   <!-- list of places -->
   <h2>Cool places in {{vm.city.name}}</h2>
   <div class="ui three column grid">
-    <div class="column" ng-repeat="place in vm.city.places track by place.id">
+    <div class="column" ng-repeat="place in vm.city.places | orderBy: 'name' track by place.id">
       <place-card name="place.name" description="place.description" id="place.id" />
     </div>
   </div>
 
-
   <!-- form for users to add a place -->
-  <div ng-include="'places/new.html'" ng-if="showAddPlace"><div>
+  <!-- To be used with: <a class="bug popup icon item" data-content="Add A Place" ng-click="showAddPlace = !showAddPlace"> -->
+  <!-- <div ng-include="'places/new.html'" ng-if="showAddPlace"><div> -->
 
 </div>
