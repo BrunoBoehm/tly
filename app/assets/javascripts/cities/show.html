@@ -14,39 +14,34 @@
 
   <!-- Main City Menu (more options for admin) -->
   <div class="ui secondary pointing menu">
-    <a class="item" ui-sref="city" ui-sref-active="active">
+    <!-- let's not put city as active since it's the root of the URL otherwise woudl always be here -->
+    <a class="ui item" ui-sref="city">
       <i class="flag icon"> </i>
       City
     </a>
-    <a class="item" ui-sref-active="active">
+    <a class="ui item" ui-sref-active="active">
       <i class="tags icon"></i>
       See Tags
     </a>
-    <a class="item" ui-sref-active="active">
+    <a class="ui item" ui-sref-active="active">
       <i class="map icon"></i>
       See Tracks
     </a>
     <div class="right menu">
-      <a class="ui item" ui-sref="city.edit">
+      <a class="ui item" ui-sref="city.edit" ui-sref-active="active">
         <i class="write icon"></i>
         Edit City
       </a>
-      <a class="ui item">
+      <a class="ui item" ui-sref-active="active">
         <i class="bookmark icon"></i>
         Add Track
       </a>
-      <a class="ui item" ui-sref="city.newPlace">
+      <a class="ui item" ui-sref="city.newPlace" ui-sref-active="active">
         <i class="pin icon"></i>
         Add Place
       </a>
     </div>
   </div>
-
-  <!-- city editor for admin -->
-  <!-- To be use with <a class="bug popup icon item" data-content="Edit This Page" ng-click="showEdit = !showEdit"> -->
-  <!-- <edit-city ng-if="showEdit"></edit-city> -->
-
-  <!-- <div class="ui hidden divider"></div> -->
 
   <!-- nested routes view -->
   <ui-view></ui-view>
@@ -55,12 +50,10 @@
   <h2>Cool places in {{vm.city.name}}</h2>
   <div class="ui three column grid">
     <div class="column" ng-repeat="place in vm.city.places | orderBy: 'name' track by place.id">
-      <place-card name="place.name" description="place.description" id="place.id" />
+      <!-- to check out the iterated place object <p>{{place}}</p> -->
+      <place-card name="place.name" description="place.description" cityid="place.city_id" placeid="place.id" city="place.city.name"></place-card>
+      <!-- very important to use bindings that have no case or - _  -->
     </div>
   </div>
-
-  <!-- form for users to add a place -->
-  <!-- To be used with: <a class="bug popup icon item" data-content="Add A Place" ng-click="showAddPlace = !showAddPlace"> -->
-  <!-- <div ng-include="'places/new.html'" ng-if="showAddPlace"><div> -->
 
 </div>
